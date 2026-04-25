@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Kalkulator Keren</title>
+<style>
+body {
+  background: linear-gradient(135deg,#1e293b,#0f172a);
+  font-family: sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:white;
+}
+
+.box {
+background:#020617;
+padding:20px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+text-align:center;
+}
+
+input {
+width:80px;
+padding:10px;
+margin:5px;
+border:none;
+border-radius:10px;
+}
+
+button {
+padding:10px 15px;
+margin:5px;
+border:none;
+border-radius:10px;
+background:#22c55e;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover {
+background:#16a34a;
+} </style>
+
+</head>
+<body>
+
+<div class="box">
+<h2>Kalkulator 😎</h2>
+
+<input id="a" type="number">
+<input id="b" type="number">
+<br>
+
+<button onclick="hitung('+')">+</button> <button onclick="hitung('-')">-</button> <button onclick="hitung('*')">×</button> <button onclick="hitung('/')">÷</button>
+
+<h3>Hasil: <span id="hasil">0</span></h3>
+</div>
+
+<script>
+function hitung(op){
+  let a = parseFloat(document.getElementById("a").value);
+  let b = parseFloat(document.getElementById("b").value);
+
+  if(isNaN(a) || isNaN(b)) return;
+
+  let h = 0;
+  if(op=='+') h=a+b;
+  if(op=='-') h=a-b;
+  if(op=='*') h=a*b;
+  if(op=='/') h=a/b;
+
+  document.getElementById("hasil").innerText = h;
+}
+</script>
+
+</body>
+</html>
